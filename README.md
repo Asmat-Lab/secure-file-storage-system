@@ -45,17 +45,36 @@ source .venv/bin/activate
 ```
 
 ### 3. Install Dependencies
-Once the environment is active, install the required library:
+Once the environment is active, install the dependencies from the `requirements.txt`:
 ```bash
-pip install cryptography
+pip install -r requirements.txt 
 ```
-*(If you have a requirements.txt file, use: `pip install -r requirements.txt`)*
 
 ### 4. Deactivate
 When you are finished working, you can turn off the environment by typing:
 ```bash
 deactivate
 ```
+
+## Compile The App (Linux)
+
+* **Open the terminal** (usually CTRL+ALT+T) in the project folder
+* **Run the following command:**
+    ```bash
+    pyinstaller --noconfirm --onefile --windowed --name "Secure File Storage System" --add-data "storage:storage" main.py
+    ```
+
+***Output:** The executable will be in the dist/ folder.*
+
+## Compile The App (Windows)
+
+* **Open the terminal (Powershell/Command Line)** in the project folder
+* **Run the following command:**
+    ```bash
+    pyinstaller --noconfirm --onefile --windowed --name "Secure File Storage System" --add-data "storage;storage" main.py
+    ```
+    
+***Output:** The executable will be in the dist/ folder.*
 
 ## How to Run
 1.  Make sure your virtual environment is active.
